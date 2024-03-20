@@ -1,6 +1,8 @@
-class Ship {
+const IObserver = require("./IObserver.js");
+class Ship extends IObserver {
   //positions { {x,y,status}, {x,y,status}, {x,y,status}, {x,y,status} }
   constructor(positions) {
+    super();
     this._positions = positions;
     this._qHits = 0;
     this._isSunk = false;
