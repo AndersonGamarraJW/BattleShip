@@ -74,14 +74,7 @@ describe("Gameboard", () => {
     gameBoard.reciveHit(1, 1);
     gameBoard.reciveHit(1, 2);
     gameBoard.reciveHit(1, 3);
-    const auxBoard = [
-      [0, 0, 0, 0, 0, 0],
-      [0, 1, 1, 1, 0, 0],
-      [0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0, 0],
-    ];
+
     expect(gameBoard.qShips).toBe(1);
     gameBoard.reciveHit(4, 4);
     gameBoard.reciveHit(3, 4);
