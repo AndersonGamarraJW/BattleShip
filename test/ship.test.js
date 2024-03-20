@@ -35,6 +35,6 @@ describe("Ship impact", () => {
     ship.hit(1, 1);
     ship.hit(1, 3);
     expect(ship.qHits).toBe(3);
-    expect(ship.isSink()).toBe(true);
+    expect(ship.isSunk()).toBe(true);
   });
 });

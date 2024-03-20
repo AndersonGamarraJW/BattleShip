@@ -5,7 +5,6 @@ class Ship extends IObserver {
     super();
     this._positions = positions;
     this._qHits = 0;
-    this._isSunk = false;
   }
   get qHits() {
     return this._qHits;
@@ -27,8 +26,9 @@ class Ship extends IObserver {
 
   hit(x, y) {
     if (this._isHit(x, y)) this._qHits++;
+    return this.isSunk();
   }
-  isSink() {
+  isSunk() {
     return Object.values(this._positions).every((point) => !point.status);
   }
 }

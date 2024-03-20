@@ -1,4 +1,3 @@
-const Ship = require("./ship.js");
 module.exports = class ShipManager {
   constructor() {
     this._ships = [];
@@ -13,5 +12,13 @@ module.exports = class ShipManager {
     this._ships.forEach((observer) => {
       observer.hit(x, y);
     });
+  }
+  cleanShips() {
+    this._ships.forEach((observer) => {
+      if (observer.isSunk()) this.removeShip(observer);
+    });
+  }
+  get qShips() {
+    return this._ships.length;
   }
 };
