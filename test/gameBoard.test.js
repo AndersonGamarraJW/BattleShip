@@ -1,3 +1,5 @@
+const GameBoard = require("../src/GameBoard.js");
+const Ship = require("../src/ship.js");
 describe("Gameboard", () => {
   let gameBoard;
   let ship;
@@ -19,7 +21,7 @@ describe("Gameboard", () => {
       [0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0],
     ];
-    expect(gameBoard.board).toBe(emptyGameBoard);
+    expect(gameBoard.board).toEqual(emptyGameBoard);
   });
 
   test("Game board use", () => {
@@ -37,7 +39,7 @@ describe("Gameboard", () => {
     gameBoard.reciveHit(3, 1);
     gameBoard.reciveHit(5, 4);
 
-    expect(gameBoard.board).toBe(useGameBoard);
+    expect(gameBoard.board).toEqual(useGameBoard);
   });
 
   test("Add ship", () => {
@@ -59,6 +61,6 @@ describe("Gameboard", () => {
       [0, 0, 0, 0, 0, 0],
     ];
     expect(gameBoard.qShips).toBe(0);
-    expect(gameBoard.board).toBe(auxBoard);
+    expect(gameBoard.board).toEqual(auxBoard);
   });
 });
