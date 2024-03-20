@@ -27,4 +27,7 @@ module.exports = class GameBoard {
   addShip(ship) {
     this._ships.addShip(ship);
   }
+  getShip(index) {
+    return this._ships.getShip(index);
+  }
 };

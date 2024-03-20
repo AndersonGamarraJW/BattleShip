@@ -2,6 +2,9 @@ module.exports = class ShipManager {
   constructor() {
     this._ships = [];
   }
+  get qShips() {
+    return this._ships.length;
+  }
   addShip(observer) {
     this._ships.push(observer);
   }
@@ -18,7 +21,7 @@ module.exports = class ShipManager {
       if (observer.isSunk()) this.removeShip(observer);
     });
   }
-  get qShips() {
-    return this._ships.length;
+  getShip(index) {
+    return this._ships[index];
   }
 };
