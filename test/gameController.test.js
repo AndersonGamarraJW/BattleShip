@@ -4,6 +4,9 @@ describe("GameController before game", () => {
   beforeAll(() => {
     gameController = new GameController();
   });
+  test("Initial size board its 0", () => {
+    expect(gameController.sizeBoard).toBe(0);
+  });
   test("Set size board", () => {
     gameController.setSizeBoard(6);
     expect(gameController.sizeBoard).toBe(6);
