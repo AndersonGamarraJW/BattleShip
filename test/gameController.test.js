@@ -20,6 +20,5 @@ describe("GameController before game", () => {
     expect(gameController.qPlayers).toBe(2);
   });
 });
-
 //In game section
 //After game section
