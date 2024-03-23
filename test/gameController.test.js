@@ -24,10 +24,10 @@ describe("GameController before game", () => {
 });
 //In game section
 describe("GameController in game", () => {
-  let gameController;
+  let gameController, player1, player2;
   beforeAll(() => {
-    const player1 = new Player("player 1", 6);
-    const player2 = new Player("player 2", 6);
+    player1 = new Player("player 1", 6);
+    player2 = new Player("player 2", 6);
     gameController = new GameController();
     gameController.setSizeBoard(6);
     gameController.addPlayer(player1);
@@ -44,6 +44,10 @@ describe("GameController in game", () => {
     gameController.toogleTurn();
     gameController.applyAttack(1, 2, prevTurnPlayer);
     expect(prevTurnPlayer.board[1][2]).toEqual(1);
+  });
+  test("Set target player", () => {
+    gameController.setTargetPlayer(player1);
+    expect(gameController.targetPlayer === player1).toEqual(true);
   });
 });
 //After game section

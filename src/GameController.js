@@ -89,4 +89,7 @@ module.exports = class GameController {
   applyAttack(x, y, targetPlayer) {
     this._currentPlayer.attack(x, y, targetPlayer);
   }
+  setTargetPlayer(player) {
+    this._targetPlayer = this._players.find((p) => p === player);
+  }
 };
