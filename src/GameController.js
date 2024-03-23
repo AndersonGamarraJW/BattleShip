@@ -22,11 +22,11 @@ module.exports = class GameController {
     this._iteratorTurn = undefined;
   }
   _setupIteratorTurnVariable() {
-    this._iteratorTurn = this._getRandomNumber(0, this._players.length);
+    this._iteratorTurn = this._getRandomNumber(0, this._players.length - 1);
   }
   _incrementIteratorTurn() {
+    this._iteratorTurn += 1;
     if (this._iteratorTurn >= this._players.length) this._iteratorTurn = 0;
-    else this._iteratorTurn += 1;
   }
   /*
    * Function to set currentPlayer varible at start game
@@ -78,5 +78,15 @@ module.exports = class GameController {
   }
   addPlayer(player) {
     this._players.push(player);
+  }
+  /*
+   * Apply an attack at the specified position
+   * @param{number} x
+   * @param{number} y
+   * @param{Player} targetPlayer
+   * @returns void
+   */
+  applyAttack(x, y, targetPlayer) {
+    this._currentPlayer.attack(x, y, targetPlayer);
   }
 };

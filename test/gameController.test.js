@@ -1,3 +1,4 @@
+const { describe, test, beforeAll, expect } = require("@jest/globals");
 const GameController = require("../src/GameController.js");
 const Player = require("../src/Player.js");
 describe("GameController before game", () => {
@@ -36,11 +37,13 @@ describe("GameController in game", () => {
   test("Toogle turn of players", () => {
     const prevTurnPlayer = gameController.currentPlayer;
     gameController.toogleTurn();
-    expect(prevTurnPlayer === gameController.currentTurnPlayer).toEqual(false);
+    expect(prevTurnPlayer === gameController.currentPlayer).toEqual(false);
   });
   test("Player attack other player", () => {
-    gameController.applyAttack(1, 2);
-    expect(gameController.targetPlayer.board[1][2]).toEqual(1);
+    const prevTurnPlayer = gameController.currentPlayer;
+    gameController.toogleTurn();
+    gameController.applyAttack(1, 2, prevTurnPlayer);
+    expect(prevTurnPlayer.board[1][2]).toEqual(1);
   });
 });
 //After game section
