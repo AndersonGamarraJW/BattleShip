@@ -1,14 +1,17 @@
+/**
+ * @jest-environment jsdom
+ */
 const { describe, test, beforeEach, expect } = require("@jest/globals");
-
+const domController = require("../src/DomControllerModule.js");
 describe("Create table of divs", () => {
   beforeEach(() => {
     document.body.innerHTML = `
-      <main id="main"></main>
+      <main id="main" class="container"></main>
     `;
   });
   test("Create empty tables 6x6 for two players", () => {
-    domController.createTable();
-    domController.createTable();
+    domController.createTable(6);
+    domController.createTable(6);
     const tableContainers = document.querySelectorAll(".table-container");
     expect(tableContainers.length).toEqual(2);
     tableContainers.forEach((tableContainer) => {

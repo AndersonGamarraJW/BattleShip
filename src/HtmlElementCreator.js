@@ -2,6 +2,7 @@ const HtmlElementCreator = (() => {
   let htmlElement;
   function setTagElement(htmlTagName) {
     htmlElement = document.createElement(htmlTagName);
+    return this;
   }
   function setId(idName) {
     htmlElement.id = idName;
