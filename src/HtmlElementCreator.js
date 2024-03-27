@@ -1,17 +1,19 @@
 const HtmlElementCreator = (() => {
   let htmlElement;
-  const setTagElement = (htmlTagName) => {
+  function setTagElement(htmlTagName) {
     htmlElement = document.createElement(htmlTagName);
-  };
-  const setId = (idName) => {
+  }
+  function setId(idName) {
     htmlElement.id = idName;
     return this;
-  };
-  const addClassName = (className) => {
+  }
+  function addClassName(className) {
     htmlElement.classList.add(className);
     return this;
-  };
-  const getValue = () => htmlElement;
+  }
+  function getValue() {
+    return htmlElement;
+  }
   return {
     setTagElement,
     setId,
