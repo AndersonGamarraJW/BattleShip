@@ -38,6 +38,7 @@ const DomController = (() => {
 
     _main.appendChild(tableContainer);
   };
+
   return {
     createTable,
   };
